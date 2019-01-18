@@ -1,0 +1,50 @@
+@media (min-width: 480px) {
+  body {
+    background-color: #191917;
+    color: #e8e8e8; } }
+
+.panel-signout {
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 420px;
+  color: #303030; }
+  @media (max-width: 480px) {
+    .panel-signout {
+      margin-top: 0;
+      border: 0;
+      border-radius: 0;
+      width: 100%; } }
+  .panel-signout .panel-heading,
+  .panel-signout .panel-footer {
+    text-align: center; }
+  .panel-signout .panel-heading,
+  .panel-signout .panel-body,
+  .panel-signout .panel-footer {
+    padding: 22px; }
+
+@-webkit-keyframes signoutBgAnimate {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@-o-keyframes signoutBgAnimate {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes signoutBgAnimate {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+/*# sourceMappingURL=signout.css.map */

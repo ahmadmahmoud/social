@@ -1,0 +1,1 @@
+{"version":3,"sources":["profile.scss"],"names":[],"mappings":"AAAA,eACE,iBAAkB,CAKnB,AAND,gCAII,YAAa,CACd","file":"profile.min.css","sourcesContent":[".panel-profile {\n  text-align: center;\n\n  .list-group-item {\n    padding: 20px;\n  }\n}"]}

@@ -1,0 +1,19 @@
+//
+// Load Bootstrap core variables and mixins
+// --------------------------------------------------
+
+@import 'fn';
+@import "../../base/bootstrap/scss/variables";
+@import "../../base/bootstrap/scss/bootstrap/variables";
+@import "../../base/bootstrap/scss/bootstrap/mixins";
+
+
+//
+// Custom variables, mixins and functions
+// --------------------------------------------------
+
+@import 'variables';
+@import 'mixins';
+
+
+/* put your own styles to customize and override the theme */

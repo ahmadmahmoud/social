@@ -1,0 +1,136 @@
+.inbox-list-view {
+  font-size: 14px; }
+  .inbox-list-view .media {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    display: block;
+    cursor: pointer;
+    margin-top: 0px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: .5rem 1rem; }
+  .inbox-list-view a.media {
+    color: inherit;
+    text-decoration: none; }
+  .inbox-list-view .unread {
+    background-color: #fff;
+    font-weight: 500; }
+    .inbox-list-view .unread .date,
+    .inbox-list-view .unread .subject,
+    .inbox-list-view .unread .has-attachment {
+      color: #303030; }
+  .inbox-list-view .media-row {
+    @inclue clearfix; }
+  .inbox-list-view .from,
+  .inbox-list-view .subject {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .inbox-list-view .from {
+    font-size: 16px; }
+  .inbox-list-view .date,
+  .inbox-list-view .subject,
+  .inbox-list-view .has-attachment {
+    color: #969696; }
+  .inbox-list-view .date,
+  .inbox-list-view .account-provider,
+  .inbox-list-view .has-attachment {
+    float: right; }
+  .inbox-list-view .has-star .fa-star-o {
+    color: #969696; }
+  .inbox-list-view .has-star .fa-star {
+    color: #C5906C; }
+  .inbox-list-view .selected {
+    -webkit-box-shadow: inset 4px 0 0 #9474a9;
+    outline: 0;
+            box-shadow: inset 4px 0 0 #9474a9;
+    background-color: #f9f7fa; }
+  .inbox-list-view .state-selected {
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #e8e8e8; }
+    .inbox-list-view .state-selected .date,
+    .inbox-list-view .state-selected .subject,
+    .inbox-list-view .state-selected .has-attachment,
+    .inbox-list-view .state-selected .has-star .fa-star-o {
+      color: #e8e8e8; }
+    .inbox-list-view .state-selected .label {
+      border-color: #88649f;
+      background-color: #88649f; }
+
+.message-heading {
+  margin-bottom: 22px;
+  border-bottom: 1px solid #e5e5e5; }
+  .message-heading .subject {
+    margin-top: 0; }
+  .message-heading .sender {
+    margin-bottom: 11px;
+    font-size: 14px; }
+
+.message-attachment {
+  font-size: 14px; }
+  .message-attachment .list-group-item {
+    padding-right: 0;
+    padding-left: 0; }
+    .message-attachment .list-group-item .label {
+      float: left;
+      margin-right: .5em; }
+
+.message-quick-replay {
+  margin-bottom: 22px; }
+
+.compose-btn {
+  padding: 1rem; }
+
+.drawerjs-has-compact .compose-btn {
+  padding-right: .5rem;
+  padding-left: .5rem; }
+
+.empty-state,
+.selected-state {
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+          transform: translateY(-50%);
+  padding: 30px;
+  width: 100%;
+  text-align: center; }
+
+.nav .custom-control {
+  margin: 10px 1rem;
+  font-size: 1rem; }
+  .nav .custom-control .custom-control-description {
+    margin-top: 0;
+    margin-left: 10px;
+    color: #969696; }
+  .nav .custom-control .custom-control-input:checked ~ .custom-control-description {
+    color: #303030; }
+
+.qeditor {
+  height: 204px; }
+  .qeditor .ql-toolbar {
+    border-width: 0 0 1px; }
+  .qeditor .ql-container {
+    border: 0; }
+
+.panel-expanded .composer-docked-body {
+  min-height: 0; }
+
+.panel-expanded .qeditor {
+  height: 304px; }
+  @media (min-width: 767px) {
+    .panel-expanded .qeditor {
+      height: 328px; } }
+
+.app-footer {
+  overflow: visible;
+  font-size: 12px;
+  line-height: 22px; }
+  .app-footer a {
+    color: inherit;
+    text-decoration: none; }
+
+/*# sourceMappingURL=inbox.css.map */

@@ -1,0 +1,258 @@
+//
+// Load Bootstrap core variables and mixins
+// --------------------------------------------------
+
+@import '../../globals/scss/fn';
+@import "../../base/bootstrap/scss/variables";
+@import "../../base/bootstrap/scss/bootstrap/variables";
+@import "../../base/bootstrap/scss/bootstrap/mixins";
+
+
+//
+// Custom variables, mixins and functions
+// --------------------------------------------------
+
+@import '../../globals/scss/variables';
+@import '../../globals/scss/mixins';
+
+$earlyblack-header-bg:                     #212227 !default;
+$earlyblack-header-active-bg:              $earlyblack-header-bg !default;
+$earlyblack-header-border:                 lighten($earlyblack-header-bg, 4%) !default;
+$earlyblack-header-toggle-hover-bg:        mix(white, $earlyblack-header-bg, 10%);
+
+
+$earlyblack-drawer-bg:             #f8f8f8 !default;
+$earlyblack-exdrawer-bg:           #303036 !default;
+
+
+$earlyblack-menu-bg:                   $earlyblack-drawer-bg !default;
+$earlyblack-menu-accent-color:         #C56C6C !default;
+$earlyblack-menu-hover-bg:             darken($earlyblack-menu-bg, 3) !default;
+$earlyblack-menu-hover-color:          #303030 !default;
+$earlyblack-menu-active-bg:            $earlyblack-menu-bg !default;
+$earlyblack-menu-active-color:         #C56C6C !default;
+$earlyblack-menu-child-bg:             darken($earlyblack-menu-bg, 3) !default;
+$earlyblack-menu-child-hover-bg:       transparent !default;
+$earlyblack-menu-child-active-bg:      transparent !default;
+
+$earlyblack-menu-header-color:      #969696 !default;
+$earlyblack-menu-link-color:        #5e5e5e !default;
+
+
+body.drawerjs-holder {
+  background-color: #303036;
+}
+.has-layout-boxed .app-footer {
+  @media (min-width: $container-sm) {
+    background-color: #303036;
+    border-color: #303036;
+  }
+}
+
+.navbar-inverse {
+  background-color: $earlyblack-header-bg;
+  border-color: $earlyblack-header-border;
+
+  .input-group-addon > .label {
+    background-color: $earlyblack-header-bg;
+  }
+
+  .navbar-toggle {
+    &:hover,
+    &:focus {
+      background-color: $earlyblack-header-toggle-hover-bg;
+    }
+  }
+
+  // navbar collapse
+  .navbar-collapse {
+    @media (max-width: $grid-float-breakpoint-max) {
+      .form-inline {
+        border-color: $earlyblack-header-border;
+      }
+      .dropdown-menu {
+        .dropdown-item {
+          @include hover-focus {
+            background-color: darken($earlyblack-header-bg, 2%);
+          }
+        }
+        > .dropdown-title,
+        > .dropdown-footer {
+          border-color: $earlyblack-header-border;
+        }
+      }
+
+      .dropdown-menu-media {
+        .dropdown-item {
+          + .dropdown-item {
+            border-color: $earlyblack-header-border;
+          }
+        }
+        .dropdown-item-highlight {
+          background-color: $earlyblack-header-active-bg;
+          @include hover-focus {
+            background-color: $earlyblack-header-active-bg;
+          }
+        }
+      }
+
+      .dropdown-list-h > .row > [class*="col-"]:nth-of-type(1n+3) {
+        border-top-color: $earlyblack-header-border;
+      }
+      .dropdown-list-h > .row > [class*="col-"]:nth-of-type(odd) {
+        border-right-color: $earlyblack-header-border;
+      }
+    }
+  }
+
+  .form-inline {
+    border-color: $earlyblack-header-border;
+  }
+
+  .avatar-wrapper {
+    .avatar-badge {
+      border-color: $earlyblack-header-bg;
+    }
+    &.has-hoverable-badge {
+      @include hover-focus {
+        .avatar-badge {
+          background-color: $earlyblack-header-bg;
+        }
+      }
+    }
+  }
+}
+
+// main drawer
+.drawerjs-wrapper {
+  background-color: $earlyblack-drawer-bg !important;
+}
+.drawerjs {
+  background-color: $earlyblack-drawer-bg;
+}
+
+.app-exdrawer {
+  background-color: $earlyblack-exdrawer-bg !important;
+}
+
+.drawerjs-nav.nav > li > a {
+  @include hover-focus {
+    color: $earlyblack-menu-hover-color;
+  }
+}
+
+// stacked menu
+.stacked-menu {
+  background-color: $earlyblack-menu-bg;
+
+  .menu-header {
+    color: $earlyblack-menu-header-color;
+  }
+
+  .menu-subhead {
+    color: $earlyblack-menu-hover-color;
+    font-weight: 500;
+  }
+
+  .menu-link {
+    color: $earlyblack-menu-link-color;
+    @include hover-focus {
+      color: $earlyblack-menu-accent-color;
+      background-color: $earlyblack-menu-child-hover-bg;
+    }
+
+    .menu-text {
+      font-weight: 500;
+      letter-spacing: .25px;
+    }
+  }
+
+  /* global state */
+  .menu-item {
+
+    + .menu-item {
+      margin-top: 0;
+    }
+
+    &.has-open:not(.has-active) {
+      > .menu-link {
+        color: $earlyblack-menu-accent-color;
+        background-color: $earlyblack-menu-child-hover-bg;
+      }
+    }
+
+    &.has-active {
+      > .menu-link {
+        color: $earlyblack-menu-active-color;
+        background-color: $earlyblack-menu-child-active-bg;
+      }
+    }
+  }
+
+  /* nav child */
+  .has-child {
+    > .menu {
+      background-color: $earlyblack-menu-child-bg;
+    }
+  }
+
+  /* nav level 1 */
+  > .menu > .menu-item {
+    > .menu-link {
+      color: $earlyblack-menu-link-color;
+
+      .menu-icon {
+        color: inherit;
+      }
+      @include hover-focus {
+        color: $earlyblack-menu-hover-color;
+        background-color: $earlyblack-menu-hover-bg;
+      }
+    }
+    &.has-open > .menu-link {
+      color: $earlyblack-menu-hover-color;
+      background-color: $earlyblack-menu-hover-bg;
+      .menu-icon {
+        color: inherit;
+      }
+      .menu-subhead {
+        background-color: $earlyblack-menu-hover-bg;
+      }
+    }
+
+    &.has-active > .menu-link {
+      color: $earlyblack-menu-active-color;
+      background-color: $earlyblack-menu-active-bg;
+      @include box-shadow(none);
+      .menu-icon {
+        color: inherit;
+      }
+    }
+  }
+}
+.stacked-menu-has-compact {
+  .has-child {
+    &.has-active {
+      .menu-subhead {
+        background-color: $earlyblack-menu-active-bg;
+      }
+    }
+  }
+
+  > .menu {
+    > .menu-item:not(.has-child) > .menu-link {
+      .menu-text {
+        background-color: $earlyblack-menu-hover-bg;
+      }
+    }
+    > .menu-item.has-active > .menu-link .menu-text {
+      background-color: $earlyblack-menu-active-bg;
+    }
+    > .menu-item.disabled > .menu-link,
+    > .menu-item > .menu-link.disabled {
+      .menu-text {
+        background-color: $earlyblack-menu-bg;
+      }
+    }
+  }
+}

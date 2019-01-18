@@ -1,0 +1,215 @@
+//
+// Load Bootstrap core variables and mixins
+// --------------------------------------------------
+
+@import '../../globals/scss/fn';
+@import "../../base/bootstrap/scss/variables";
+@import "../../base/bootstrap/scss/bootstrap/variables";
+@import "../../base/bootstrap/scss/bootstrap/mixins";
+
+
+//
+// Custom variables, mixins and functions
+// --------------------------------------------------
+
+@import '../../globals/scss/variables';
+@import '../../globals/scss/mixins';
+
+$ebony-header-bg:                     #34344A !default;
+$ebony-header-active-bg:              $ebony-header-bg !default;
+$ebony-header-border:                 lighten($ebony-header-bg, 4%) !default;
+$ebony-header-toggle-hover-bg:        mix(white, $ebony-header-bg, 10%);
+
+
+$ebony-drawer-bg:             #242331 !default;
+$ebony-exdrawer-bg:           #202030 !default;
+
+
+$ebony-menu-bg:                   $ebony-drawer-bg !default;
+$ebony-menu-accent-color:         #4D9DE0 !default;
+$ebony-menu-hover-bg:             darken($ebony-menu-bg, 3) !default;
+$ebony-menu-active-bg:            lighten($ebony-menu-bg, 3) !default;
+$ebony-menu-child-bg:             lighten($ebony-menu-bg, 3) !default;
+$ebony-menu-child-hover-bg:       transparent !default;
+$ebony-menu-child-active-bg:      transparent !default;
+
+
+body.drawerjs-holder {
+  background-color: #071013;
+}
+.has-layout-boxed .app-footer {
+  @media (min-width: $container-sm) {
+    background-color: $ebony-header-bg;
+    border-color: $ebony-header-bg;
+  }
+}
+
+.navbar-inverse {
+  background-color: $ebony-header-bg;
+  border-color: $ebony-header-border;
+
+  .input-group-addon > .label {
+    background-color: $ebony-header-bg;
+  }
+
+  .navbar-toggle {
+    &:hover,
+    &:focus {
+      background-color: $ebony-header-toggle-hover-bg;
+    }
+  }
+
+  // navbar collapse
+  .navbar-collapse {
+    @media (max-width: $grid-float-breakpoint-max) {
+      .form-inline {
+        border-color: $ebony-header-border;
+      }
+      .dropdown-menu {
+        .dropdown-item {
+          @include hover-focus {
+            background-color: darken($ebony-header-bg, 2%);
+          }
+        }
+        > .dropdown-title,
+        > .dropdown-footer {
+          border-color: $ebony-header-border;
+        }
+      }
+
+      .dropdown-menu-media {
+        .dropdown-item {
+          + .dropdown-item {
+            border-color: $ebony-header-border;
+          }
+        }
+        .dropdown-item-highlight {
+          background-color: $ebony-header-active-bg;
+          @include hover-focus {
+            background-color: $ebony-header-active-bg;
+          }
+        }
+      }
+
+      .dropdown-list-h > .row > [class*="col-"]:nth-of-type(1n+3) {
+        border-top-color: $ebony-header-border;
+      }
+      .dropdown-list-h > .row > [class*="col-"]:nth-of-type(odd) {
+        border-right-color: $ebony-header-border;
+      }
+    }
+  }
+
+  .form-inline {
+    border-color: $ebony-header-border;
+  }
+
+  .avatar-wrapper {
+    .avatar-badge {
+      border-color: $ebony-header-bg;
+    }
+    &.has-hoverable-badge {
+      @include hover-focus {
+        .avatar-badge {
+          background-color: $ebony-header-bg;
+        }
+      }
+    }
+  }
+}
+
+// main drawer
+.drawerjs-wrapper {
+  background-color: $ebony-drawer-bg !important;
+}
+.drawerjs {
+  background-color: $ebony-drawer-bg;
+}
+
+.app-exdrawer {
+  background-color: $ebony-exdrawer-bg !important;
+}
+
+// stacked menu
+.stacked-menu {
+  background-color: $ebony-menu-bg;
+
+  .menu-link {
+    @include hover-focus {
+      color: $ebony-menu-accent-color;
+      background-color: $ebony-menu-child-hover-bg;
+    }
+  }
+
+  /* global state */
+  .menu-item {
+
+    + .menu-item {
+      margin-top: 0;
+    }
+
+    &.has-open:not(.has-active) {
+      > .menu-link {
+        color: $ebony-menu-accent-color;
+        background-color: $ebony-menu-child-hover-bg;
+      }
+    }
+
+    &.has-active {
+      > .menu-link {
+        background-color: $ebony-menu-child-active-bg;
+      }
+    }
+  }
+
+  /* nav child */
+  .has-child {
+    > .menu {
+      background-color: $ebony-menu-child-bg;
+    }
+  }
+
+  /* nav level 1 */
+  > .menu > .menu-item {
+    > .menu-link {
+      @include hover-focus {
+        background-color: $ebony-menu-hover-bg;
+      }
+    }
+    &.has-open > .menu-link {
+      color: #fff;
+      background-color: $ebony-menu-hover-bg;
+    }
+
+    &.has-active > .menu-link {
+      background-color: $ebony-menu-active-bg;
+      @include box-shadow(inset 4px 0 0 $ebony-menu-accent-color);
+    }
+  }
+}
+.stacked-menu-has-compact {
+  .has-child {
+    &.has-active {
+      .menu-subhead {
+        background-color: $ebony-menu-active-bg;
+      }
+    }
+  }
+
+  > .menu {
+    > .menu-item:not(.has-child) > .menu-link {
+      .menu-text {
+        background-color: $ebony-menu-hover-bg;
+      }
+    }
+    > .menu-item.has-active > .menu-link .menu-text {
+      background-color: $ebony-menu-active-bg;
+    }
+    > .menu-item.disabled > .menu-link,
+    > .menu-item > .menu-link.disabled {
+      .menu-text {
+        background-color: $ebony-menu-bg;
+      }
+    }
+  }
+}

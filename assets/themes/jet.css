@@ -1,0 +1,95 @@
+body.drawerjs-holder {
+  background-color: #071013; }
+
+@media (min-width: 740px) {
+  .has-layout-boxed .app-footer {
+    border-color: #1B2432;
+    background-color: #1B2432; } }
+
+.navbar-inverse {
+  border-color: #28364b;
+  background-color: #1B2432; }
+  .navbar-inverse .input-group-addon > .label {
+    background-color: #1B2432; }
+  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #323a47; }
+  @media (max-width: 767px) {
+    .navbar-inverse .navbar-collapse .form-inline {
+      border-color: #28364b; }
+    .navbar-inverse .navbar-collapse .dropdown-menu .dropdown-item:hover, .navbar-inverse .navbar-collapse .dropdown-menu .dropdown-item:focus,
+    .navbar-inverse .navbar-collapse .dropdown-menu .dropdown-item .focus {
+      background-color: #171f2b; }
+    .navbar-inverse .navbar-collapse .dropdown-menu > .dropdown-title,
+    .navbar-inverse .navbar-collapse .dropdown-menu > .dropdown-footer {
+      border-color: #28364b; }
+    .navbar-inverse .navbar-collapse .dropdown-menu-media .dropdown-item + .dropdown-item {
+      border-color: #28364b; }
+    .navbar-inverse .navbar-collapse .dropdown-menu-media .dropdown-item-highlight {
+      background-color: #141a25; }
+      .navbar-inverse .navbar-collapse .dropdown-menu-media .dropdown-item-highlight:hover, .navbar-inverse .navbar-collapse .dropdown-menu-media .dropdown-item-highlight:focus,
+      .navbar-inverse .navbar-collapse .dropdown-menu-media .dropdown-item-highlight .focus {
+        background-color: #141a25; }
+    .navbar-inverse .navbar-collapse .dropdown-list-h > .row > [class*="col-"]:nth-of-type(1n+3) {
+      border-top-color: #28364b; }
+    .navbar-inverse .navbar-collapse .dropdown-list-h > .row > [class*="col-"]:nth-of-type(odd) {
+      border-right-color: #28364b; } }
+  .navbar-inverse .form-inline {
+    border-color: #28364b; }
+  .navbar-inverse .avatar-wrapper .avatar-badge {
+    border-color: #1B2432; }
+  .navbar-inverse .avatar-wrapper.has-hoverable-badge:hover .avatar-badge, .navbar-inverse .avatar-wrapper.has-hoverable-badge:focus .avatar-badge,
+  .navbar-inverse .avatar-wrapper.has-hoverable-badge .focus .avatar-badge {
+    background-color: #1B2432; }
+
+.drawerjs-wrapper {
+  background-color: #2C363F !important; }
+
+.drawerjs {
+  background-color: #2C363F; }
+
+.app-exdrawer {
+  background-color: #2C2B3C !important; }
+
+.stacked-menu {
+  /* global state */
+  /* nav child */
+  /* nav level 1 */
+  background-color: #2C363F; }
+  .stacked-menu .menu-link:hover, .stacked-menu .menu-link:focus,
+  .stacked-menu .menu-link .focus {
+    background-color: transparent;
+    color: #04C4A5; }
+  .stacked-menu .menu-item + .menu-item {
+    margin-top: 0; }
+  .stacked-menu .menu-item.has-open:not(.has-active) > .menu-link {
+    background-color: transparent;
+    color: #04C4A5; }
+  .stacked-menu .menu-item.has-active > .menu-link {
+    background-color: transparent; }
+  .stacked-menu .has-child > .menu {
+    background-color: #323e48; }
+  .stacked-menu > .menu > .menu-item > .menu-link:hover, .stacked-menu > .menu > .menu-item > .menu-link:focus,
+  .stacked-menu > .menu > .menu-item > .menu-link .focus {
+    background-color: #262e36; }
+  .stacked-menu > .menu > .menu-item.has-open > .menu-link {
+    background-color: #262e36;
+    color: #fff; }
+  .stacked-menu > .menu > .menu-item.has-active > .menu-link {
+    -webkit-box-shadow: inset 4px 0 0 #04C4A5;
+    box-shadow: inset 4px 0 0 #04C4A5;
+    background-color: #323e48; }
+
+.stacked-menu-has-compact .has-child.has-active .menu-subhead {
+  background-color: #323e48; }
+
+.stacked-menu-has-compact > .menu > .menu-item:not(.has-child) > .menu-link .menu-text {
+  background-color: #262e36; }
+
+.stacked-menu-has-compact > .menu > .menu-item.has-active > .menu-link .menu-text {
+  background-color: #323e48; }
+
+.stacked-menu-has-compact > .menu > .menu-item.disabled > .menu-link .menu-text,
+.stacked-menu-has-compact > .menu > .menu-item > .menu-link.disabled .menu-text {
+  background-color: #2C363F; }
+
+/*# sourceMappingURL=jet.css.map */

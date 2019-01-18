@@ -1,0 +1,18 @@
+//
+// Load Bootstrap core variables and mixins
+// --------------------------------------------------
+
+@import '../../../../globals/scss/fn';
+@import "../../../../base/bootstrap/scss/variables";
+@import "../../../../base/bootstrap/scss/bootstrap/variables";
+
+// drawerjs
+@import '../drawerjs/variables';
+
+// stacked menu
+@import 'variables';
+@import 'mixins';
+@import 'core';
+@import 'collapsible';
+@import 'hoverable';
+@import 'direction';

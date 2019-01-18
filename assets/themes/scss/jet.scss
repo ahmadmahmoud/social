@@ -1,0 +1,215 @@
+//
+// Load Bootstrap core variables and mixins
+// --------------------------------------------------
+
+@import '../../globals/scss/fn';
+@import "../../base/bootstrap/scss/variables";
+@import "../../base/bootstrap/scss/bootstrap/variables";
+@import "../../base/bootstrap/scss/bootstrap/mixins";
+
+
+//
+// Custom variables, mixins and functions
+// --------------------------------------------------
+
+@import '../../globals/scss/variables';
+@import '../../globals/scss/mixins';
+
+$jet-header-bg:                     #1B2432 !default;
+$jet-header-active-bg:              darken($jet-header-bg, 4%) !default;
+$jet-header-border:                 lighten($jet-header-bg, 7.5%) !default;
+$jet-header-toggle-hover-bg:        mix(white, $jet-header-bg, 10%);
+
+
+$jet-drawer-bg:             #2C363F !default;
+$jet-exdrawer-bg:           #2C2B3C !default;
+
+
+$jet-menu-bg:                   #2C363F !default;
+$jet-menu-accent-color:         #04C4A5 !default;
+$jet-menu-hover-bg:             darken($jet-menu-bg, 3) !default;
+$jet-menu-active-bg:            lighten($jet-menu-bg, 3) !default;
+$jet-menu-child-bg:             lighten($jet-menu-bg, 3) !default;
+$jet-menu-child-hover-bg:       transparent !default;
+$jet-menu-child-active-bg:      transparent !default;
+
+
+body.drawerjs-holder {
+  background-color: #071013;
+}
+.has-layout-boxed .app-footer {
+  @media (min-width: $container-sm) {
+    background-color: $jet-header-bg;
+    border-color: $jet-header-bg;
+  }
+}
+
+.navbar-inverse {
+  background-color: $jet-header-bg;
+  border-color: $jet-header-border;
+
+  .input-group-addon > .label {
+    background-color: $jet-header-bg;
+  }
+
+  .navbar-toggle {
+    &:hover,
+    &:focus {
+      background-color: $jet-header-toggle-hover-bg;
+    }
+  }
+
+  // navbar collapse
+  .navbar-collapse {
+    @media (max-width: $grid-float-breakpoint-max) {
+      .form-inline {
+        border-color: $jet-header-border;
+      }
+      .dropdown-menu {
+        .dropdown-item {
+          @include hover-focus {
+            background-color: darken($jet-header-bg, 2%);
+          }
+        }
+        > .dropdown-title,
+        > .dropdown-footer {
+          border-color: $jet-header-border;
+        }
+      }
+
+      .dropdown-menu-media {
+        .dropdown-item {
+          + .dropdown-item {
+            border-color: $jet-header-border;
+          }
+        }
+        .dropdown-item-highlight {
+          background-color: $jet-header-active-bg;
+          @include hover-focus {
+            background-color: $jet-header-active-bg;
+          }
+        }
+      }
+
+      .dropdown-list-h > .row > [class*="col-"]:nth-of-type(1n+3) {
+        border-top-color: $jet-header-border;
+      }
+      .dropdown-list-h > .row > [class*="col-"]:nth-of-type(odd) {
+        border-right-color: $jet-header-border;
+      }
+    }
+  }
+
+  .form-inline {
+    border-color: $jet-header-border;
+  }
+
+  .avatar-wrapper {
+    .avatar-badge {
+      border-color: $jet-header-bg;
+    }
+    &.has-hoverable-badge {
+      @include hover-focus {
+        .avatar-badge {
+          background-color: $jet-header-bg;
+        }
+      }
+    }
+  }
+}
+
+// main drawer
+.drawerjs-wrapper {
+  background-color: $jet-drawer-bg !important;
+}
+.drawerjs {
+  background-color: $jet-drawer-bg;
+}
+
+.app-exdrawer {
+  background-color: $jet-exdrawer-bg !important;
+}
+
+// stacked menu
+.stacked-menu {
+  background-color: $jet-menu-bg;
+
+  .menu-link {
+    @include hover-focus {
+      color: $jet-menu-accent-color;
+      background-color: $jet-menu-child-hover-bg;
+    }
+  }
+
+  /* global state */
+  .menu-item {
+
+    + .menu-item {
+      margin-top: 0;
+    }
+
+    &.has-open:not(.has-active) {
+      > .menu-link {
+        color: $jet-menu-accent-color;
+        background-color: $jet-menu-child-hover-bg;
+      }
+    }
+
+    &.has-active {
+      > .menu-link {
+        background-color: $jet-menu-child-active-bg;
+      }
+    }
+  }
+
+  /* nav child */
+  .has-child {
+    > .menu {
+      background-color: $jet-menu-child-bg;
+    }
+  }
+
+  /* nav level 1 */
+  > .menu > .menu-item {
+    > .menu-link {
+      @include hover-focus {
+        background-color: $jet-menu-hover-bg;
+      }
+    }
+    &.has-open > .menu-link {
+      color: #fff;
+      background-color: $jet-menu-hover-bg;
+    }
+
+    &.has-active > .menu-link {
+      background-color: $jet-menu-active-bg;
+      @include box-shadow(inset 4px 0 0 $jet-menu-accent-color);
+    }
+  }
+}
+.stacked-menu-has-compact {
+  .has-child {
+    &.has-active {
+      .menu-subhead {
+        background-color: $jet-menu-active-bg;
+      }
+    }
+  }
+
+  > .menu {
+    > .menu-item:not(.has-child) > .menu-link {
+      .menu-text {
+        background-color: $jet-menu-hover-bg;
+      }
+    }
+    > .menu-item.has-active > .menu-link .menu-text {
+      background-color: $jet-menu-active-bg;
+    }
+    > .menu-item.disabled > .menu-link,
+    > .menu-item > .menu-link.disabled {
+      .menu-text {
+        background-color: $jet-menu-bg;
+      }
+    }
+  }
+}

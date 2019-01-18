@@ -1,0 +1,41 @@
+body {
+  @media (min-width: 480px) {
+    color: #e8e8e8;
+    background-color: #191917;
+    // background: #191917 linear-gradient(270deg, #9474a9, #04c4a5);
+    // background-size: 400% 400%;
+    // animation: signinBgAnimate 30s ease infinite;
+  }
+}
+
+.panel-signin {
+  margin-top: 96px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #303030;
+  width: 420px;
+
+  @media (max-width: 480px) {
+    margin-top: 60px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .panel-heading,
+  .panel-footer {
+    text-align: center;
+  }
+  .panel-heading,
+  .panel-body,
+  .panel-footer {
+    padding: 22px;
+  }
+}
+
+@keyframes signinBgAnimate {
+  0% { background-position:0% 50% }
+  50% { background-position:100% 50% }
+  100% { background-position:0% 50% }
+}

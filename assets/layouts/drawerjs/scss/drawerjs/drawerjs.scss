@@ -1,0 +1,225 @@
+//
+// Load Bootstrap core variables and mixins
+// --------------------------------------------------
+
+@import '../../../../globals/scss/fn';
+@import "../../../../base/bootstrap/scss/variables";
+@import "../../../../base/bootstrap/scss/bootstrap/variables";
+
+// drawerjs
+@import 'variables';
+@import 'mixins';
+
+/** Core */
+.#{$drawerjs-class-prefix} {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $drawerjs-width;
+  min-height: 100vh;
+  height: 100%;
+  /* required to have background color */
+  background-color: $drawerjs-bg;
+  color: $drawerjs-color;
+  overflow-x: hidden;
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: $drawerjs-zindex;
+  @include box-shadow($drawerjs-shadow);
+  @include transition($drawerjs-transition);
+
+  &-light {
+    color: $drawerjs-bg;
+  }
+
+  &:not(.#{$drawerjs-class-prefix}-has-pinned) {
+    @media (max-width: 575px) {
+      max-width: 80%;
+      max-width: calc(100% - 58px);
+    }
+  }
+
+  &.#{$drawerjs-class-prefix}-has-slideIn {
+    transform: translateX(0);
+    overflow-x: auto;
+  }
+}
+
+/** Wrapper */
+.#{$drawerjs-class-prefix}-wrapper {
+  /* must be equal to .#{$drawerjs-class-prefix} */
+  background-color: $drawerjs-bg;
+}
+
+/** Holder, usually main site content */
+.#{$drawerjs-class-prefix}-holder {
+  position: relative;
+  margin-left: $drawerjs-width;
+  /* better to have background color */
+  background-color: $drawerjs-holder-bg;
+  min-height: 100vh;
+  height: 100%;
+  @include transition($drawerjs-holder-transition);
+}
+/** when use body as holder */
+body.#{$drawerjs-class-prefix}-holder {
+  background-color: darken($drawerjs-bg, 5%);
+}
+
+/** Backdrop */
+.#{$drawerjs-class-prefix}-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($drawerjs-backdrop-bg, .5);
+  z-index: $drawerjs-backdrop-zindex;
+
+  @media (min-width: 992px) {
+    background-color: rgba($drawerjs-backdrop-bg, 0);
+  }
+}
+
+
+/** Behavior */
+/** drawer open */
+.#{$drawerjs-class-prefix}-has-open {
+  opacity: 1;
+}
+/** drawer align */
+.#{$drawerjs-class-prefix}-has-right {
+  right: 0;
+  left: auto;
+  transform: translateX(100%);
+
+  .#{$drawerjs-class-prefix}-holder {
+    margin-right: $drawerjs-width;
+    margin-left: auto;
+  }
+}
+/** drawer fixed */
+.#{$drawerjs-class-prefix}-has-fixed {
+  &:not(.#{$drawerjs-class-prefix}-has-compact) {
+    overflow-y: auto;
+  }
+}
+/** drawer pinned */
+.#{$drawerjs-class-prefix}-has-pinned {
+  @include box-shadow(none);
+
+  &.#{$drawerjs-class-prefix}-has-slideIn {
+    overflow-x: visible;
+  }
+
+  &:not(.#{$drawerjs-class-prefix}-has-fixed) {
+    position: absolute;
+    bottom: auto;
+    height: auto;
+  }
+}
+/** drawer close */
+.#{$drawerjs-class-prefix}-has-close {
+  &:not(.#{$drawerjs-class-prefix}-has-fixed) {
+    height: 100%;
+  }
+}
+/** drawer forcePos as toastr */
+.#{$drawerjs-class-prefix}-toastr {
+  padding: 1rem 78px 1rem 1rem;
+  min-width: 100%;
+  transition: transform 150ms linear;
+
+  &:not(.drawerjs-has-pinned) {
+    @media (max-width: 575px) {
+      max-width: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    margin: 1rem;
+    min-width: 288px;
+    max-width: 568px;
+    border-radius: 2px;
+  }
+
+  .btn-toastr-close {
+    float: right;
+    margin-top: -.5rem;
+    margin-right: -78px;
+    margin-bottom: -.5rem;
+    color: #FFC300;
+
+    &:hover,
+    &:focus {
+      color: darken(#FFC300, 15%);
+    }
+  }
+}
+/** drawer forcePos as bottom-sheet */
+.#{$drawerjs-class-prefix}-bottom-sheet {
+  $sheet-grid: 58px !default;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 80%;
+  max-height: calc(100% - #{$sheet-grid});
+
+  @media (min-width: 768px) {
+    min-width: ($sheet-grid * 8);
+    max-width: 80%;
+    max-width: calc(100% - #{$sheet-grid});
+  }
+  @media (min-width: 992px) {
+    min-width: ($sheet-grid * 10);
+    max-width: calc(100% - (#{$sheet-grid} * 2));
+  }
+  @media (min-width: 1200px) {
+    min-width: ($sheet-grid * 12);
+    max-width: calc(100% - (#{$sheet-grid} * 3));
+  }
+}
+
+
+/** Helper classes */
+.#{$drawerjs-class-prefix}-hold-transition {
+  transition: none;
+}
+.#{$drawerjs-class-prefix} {
+  .show-on-compact,
+  .show-on-pinned,
+  .show-on-open {
+    display: none;
+  }
+}
+/** helper compact */
+.#{$drawerjs-class-prefix}-has-compact {
+  .hide-on-compact {
+    display: none;
+  }
+  .show-on-compact {
+    display: block;
+  }
+}
+/** helper pinned */
+.#{$drawerjs-class-prefix}-has-pinned {
+  .hide-on-pinned {
+    display: none;
+  }
+  .show-on-pinned {
+    display: block;
+  }
+}
+/** helper open */
+.#{$drawerjs-class-prefix}-has-open {
+  .hide-on-open {
+    display: none;
+  }
+  .show-on-open {
+    display: block;
+  }
+}

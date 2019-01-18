@@ -1,0 +1,23 @@
+// Core variables and mixins
+
+@import "../../../globals/scss/fn";
+@import "../../../base/bootstrap/scss/variables";
+@import "../../../base/bootstrap/scss/bootstrap/variables";
+@import "../../../base/bootstrap/scss/bootstrap/mixins";
+
+// replacer
+@import "../../../globals/scss/variables";
+@import "../../drawerjs/scss/drawerjs/variables";
+@import "../../drawerjs/scss/stacked-menu/variables";
+
+@import "variables";
+@import "main";
+@import "header";
+@import "drawer";
+@import "content";
+@import "content-side";
+@import "content-table";
+@import "content-reference";
+@import "content-boards";
+@import "footer";
+@import "utils";
